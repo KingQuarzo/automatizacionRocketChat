@@ -22,11 +22,14 @@ apply plugin: 'net.serenity-bdd.aggregator'
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation 'net.serenity-bdd:serenity-cucumber:1.9.35'
+    testImplementation 'org.junit.platform:junit-platform-launcher:1.11.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.18.0'
+    implementation 'net.serenity-bdd:serenity-cucumber:4.2.4'
     implementation 'net.serenity-bdd:serenity-screenplay:4.2.3'
     implementation 'net.serenity-bdd:serenity-screenplay-webdriver:4.2.4'
     implementation 'net.serenity-bdd:serenity-junit:4.2.7'
     implementation 'net.serenity-bdd:serenity-core:4.2.7'
+    implementation 'io.cucumber:datatable:7.20.0'
 }
 
 compileJava.options.encoding = 'UTF-8'
