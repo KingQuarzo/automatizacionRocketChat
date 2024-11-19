@@ -1,15 +1,5 @@
-
 repositories {
     mavenCentral()
-}
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath('net.serenity-bdd:serenity-gradle-plugin:2.0.45')
-    }
 }
 
 group 'org.example'
@@ -17,12 +7,13 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java-library'
 apply plugin: 'idea'
-apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: 'java'
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testImplementation 'io.cucumber:cucumber-java:7.14.0'
     testImplementation 'org.junit.platform:junit-platform-launcher:1.11.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.25.0'
     testImplementation 'io.cucumber:cucumber-junit:7.18.0'
     implementation 'net.serenity-bdd:serenity-cucumber:4.2.4'
     implementation 'net.serenity-bdd:serenity-screenplay:4.2.3'
@@ -34,7 +25,3 @@ dependencies {
 
 compileJava.options.encoding = 'UTF-8'
 gradle.startParameter.continueOnFailure = true
-
-test {
-    useJUnitPlatform()
-}
