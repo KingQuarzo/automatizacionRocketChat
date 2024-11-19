@@ -1,4 +1,4 @@
-Feature: Iniciar Sesion - Yo como usuario de Rocket.chat quiero acceder al aplicativo para acceder a los canales y módulos disponibles por perfil.
+Feature: Iniciar Sesion
 
   Scenario Outline: Iniciar sesion con un nuevo usuario
     Given dado que se ingreso al aplicativo RocketChat

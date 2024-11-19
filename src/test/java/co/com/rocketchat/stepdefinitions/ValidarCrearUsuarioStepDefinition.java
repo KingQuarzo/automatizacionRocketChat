@@ -1,6 +1,8 @@
 package co.com.rocketchat.stepdefinitions;
 
 import co.com.rocketchat.models.NewUser;
+import co.com.rocketchat.task.InsertNewUserTask;
+import co.com.rocketchat.task.ManagementUsersTask;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.DataTableType;
@@ -32,11 +34,12 @@ public class ValidarCrearUsuarioStepDefinition {
 
     @Given("se ingreso al modulo de creacion de usuario como administrador")
     public void seIngresoAlModuloDeCreacionDeUsuarioComoAdministrador() {
-        theActorInTheSpotlight().attemptsTo();
+        theActorInTheSpotlight().attemptsTo(ManagementUsersTask.into());
     }
 
     @When("se añada un nuevo usuario")
     public void seAñadaUnNuevoUsuario(List<NewUser> newUsers) {
+        theActorInTheSpotlight().attemptsTo(InsertNewUserTask.withThisData(newUsers.get(0)));
     }
 
     @Then("se visualizara el usario en las lista de usuarios")

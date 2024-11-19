@@ -1,5 +1,6 @@
 package co.com.rocketchat.task;
 
+import co.com.rocketchat.interactions.Wait;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -11,10 +12,11 @@ public class ManagementUsersTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Wait.until(5000),
                 Click.on(BTN_MODULO_USUARIOS)
         );
     }
-    public static ManagementChannelTask into(){
-        return instrumented(ManagementChannelTask.class);
+    public static ManagementUsersTask into(){
+        return instrumented(ManagementUsersTask.class);
     }
 }

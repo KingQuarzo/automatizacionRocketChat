@@ -23,8 +23,7 @@ public class LoginTask implements Task {
         actor.attemptsTo(
                 Enter.theValue(user.getUser()).into(TXT_USERNAME),
                 Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
-                Click.on(BTN_LOGIN),
-                Wait.until(5000)
+                Click.on(BTN_LOGIN)
         );
     }
 

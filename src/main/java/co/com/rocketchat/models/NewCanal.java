@@ -4,7 +4,7 @@ public class NewCanal {
 
     String nombre;
     String tema;
-    String accesibilidad;
+
 
     public String getNombre() {
         return nombre;
@@ -22,17 +22,9 @@ public class NewCanal {
         this.tema = tema;
     }
 
-    public String getAccesibilidad() {
-        return accesibilidad;
-    }
 
-    public void setAccesibilidad(String accesibilidad) {
-        this.accesibilidad = accesibilidad;
-    }
-
-    public NewCanal(String nombre, String tema, String accesibilidad) {
+    public NewCanal(String nombre, String tema) {
         this.nombre = nombre;
         this.tema = tema;
-        this.accesibilidad = accesibilidad;
     }
 }
