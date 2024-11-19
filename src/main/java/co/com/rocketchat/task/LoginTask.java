@@ -21,9 +21,11 @@ public class LoginTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Wait.until(5000),
                 Enter.theValue(user.getUser()).into(TXT_USERNAME),
                 Enter.theValue(user.getPassword()).into(TXT_PASSWORD),
-                Click.on(BTN_LOGIN)
+                Click.on(BTN_LOGIN),
+                Wait.until(5000)
         );
     }
 

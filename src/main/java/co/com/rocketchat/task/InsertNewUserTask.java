@@ -1,13 +1,13 @@
 package co.com.rocketchat.task;
 
-import co.com.rocketchat.interactions.Wait;
 import co.com.rocketchat.models.NewUser;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static co.com.rocketchat.userinterfaces.UserManagementPage.*;
+import static co.com.rocketchat.userinterfaces.NewUserFormPage.*;
+import static co.com.rocketchat.userinterfaces.UserManagementPage.BTN_NEW_USER;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class InsertNewUserTask implements Task {

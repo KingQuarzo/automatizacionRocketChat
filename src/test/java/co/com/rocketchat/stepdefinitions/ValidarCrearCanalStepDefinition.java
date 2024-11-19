@@ -1,6 +1,7 @@
 package co.com.rocketchat.stepdefinitions;
 
 import co.com.rocketchat.models.NewCanal;
+import co.com.rocketchat.questions.ChannelName;
 import co.com.rocketchat.task.InsertNewChannelTask;
 import co.com.rocketchat.task.ManagementChannelTask;
 import io.cucumber.java.After;
@@ -15,6 +16,8 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import java.util.List;
 import java.util.Map;
 
+import static co.com.rocketchat.userinterfaces.ChannelPage.VIEW_TITLE;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ValidarCrearCanalStepDefinition {
@@ -42,7 +45,8 @@ public class ValidarCrearCanalStepDefinition {
     }
 
     @Then("se podra visualizar el canal en lista de canales")
-    public void sePodraVisualizarElCanalEnListaDeCanales() {
+    public void sePodraVisualizarElCanalEnListaDeCanales(List<NewCanal> newCanal) {
+        theActorInTheSpotlight().should(seeThat(ChannelName.check(VIEW_TITLE.getCssOrXPathSelector(),newCanal.get(0).getNombre())));
     }
 
     @After

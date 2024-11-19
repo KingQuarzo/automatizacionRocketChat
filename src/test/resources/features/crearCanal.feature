@@ -10,6 +10,8 @@ Feature: Crear canal
       | nombre   | tema   |
       | <nombre> | <tema> |
     Then se podra visualizar el canal en lista de canales
+      | nombre   | tema   |
+      | <nombre> | <tema> |
     Examples:
       | nombre      | tema   | user     | password |
       | canalPrueba | varios | admin123 | admin123 |

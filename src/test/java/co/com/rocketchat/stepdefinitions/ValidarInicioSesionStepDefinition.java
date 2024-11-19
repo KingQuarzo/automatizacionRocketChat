@@ -1,6 +1,7 @@
 package co.com.rocketchat.stepdefinitions;
 
 import co.com.rocketchat.models.User;
+import co.com.rocketchat.questions.WelcomeMessage;
 import co.com.rocketchat.task.LoginTask;
 import co.com.rocketchat.utils.drivers.OwnRemoteWebDriver;
 import io.cucumber.java.After;
@@ -16,6 +17,9 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import java.util.List;
 import java.util.Map;
 
+import static co.com.rocketchat.userinterfaces.MainPage.VIEW_WELCOME;
+import static co.com.rocketchat.utils.constants.Constants.WELCOME_MESSAGE;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ValidarInicioSesionStepDefinition {
@@ -44,6 +48,7 @@ public class ValidarInicioSesionStepDefinition {
 
     @Then("se podra visualizar el mensaje de bienvenida")
     public void sePodraVisualizarElMensajeDeBienvenida() {
+        theActorInTheSpotlight().should(seeThat(WelcomeMessage.check(VIEW_WELCOME.getCssOrXPathSelector(),WELCOME_MESSAGE.getDescription())));
     }
 
     @After
